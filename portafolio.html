@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura Virtual - Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <header class="bg-blue-900 text-white p-4 shadow">
+        <nav class="container mx-auto flex flex-wrap justify-between items-center">
+          <a href="index.html" class="font-bold text-xl">Arquitectura Virtual</a>
+          <ul class="flex flex-col space-y-2 md:flex-row md:space-x-6 md:space-y-0 text-base md:text-lg mt-4 md:mt-0">
+            <li><a href="index.html" class="hover:underline">Inicio</a></li>
+            <li><a href="servicios.html" class="hover:underline">Servicios</a></li>
+            <li><a href="portafolio.html" class="hover:underline font-bold underline">Portafolio</a></li>
+            <li><a href="contacto.html" class="hover:underline ">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+
+    <main class="container mx-auto px-4 py-6 md:p-8 flex-grow">
+        <h1 class="text-2xl md:text-3xl font-bold mb-6">Portafolio</h1>
+    
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Imagen 1 -->
+          <div  class="cursor-pointer">
+            <img src="/imagenes/ai-generated-8894561_1280.jpg" alt="Render 1" class="rounded shadow w-full h-48 sm:h-64 md:h-80 object-cover">
+            <p class="text-center mt-2">Casa Moderna</p>
+          </div>
+    
+          <!-- Imagen 2 -->
+          <div @click="selected = { src: 'img/render2.jpg', title: 'Render Edificio Minimalista' }" class="cursor-pointer">
+            <img src="/imagenes/living-room-1643855_1280.jpg" alt="Render 2" class="rounded shadow w-full h-48 sm:h-64 md:h-80 object-cover">
+            <p class="text-center mt-2">Habitacion Minimalista</p>
+          </div>
+    
+          <!-- Video -->
+          <div  class="cursor-pointer">
+            <img src="/imagenes/hombre-alegre-con-gafas-virtuales-frente-la-nueva-casa.jpg" alt="Video Recorrido" class="rounded shadow w-full h-48 sm:h-64 md:h-80 object-cover">
+            <p class="text-center mt-2">Recorrido Virtual</p>
+          </div>
+        </div>
+      </main>
+    
+      <!-- Modal -->
+      <template x-if="selected">
+        <div class="fixed inset-0 bg-black/70 flex items-center justify-center z-50" @click.away="selected = null">
+          <div class="relative max-w-3xl w-[90%]">
+    
+            <!-- Cerrar -->
+            <button @click="selected = null" class="absolute -top-4 -right-4 bg-white rounded-full p-2 shadow">
+              ✕
+            </button>
+    
+            <!-- Imagen -->
+            <template x-if="!selected.video">
+              <img :src="selected.src" :alt="selected.title" class="rounded shadow-lg max-h-[80vh] mx-auto">
+            </template>
+    
+            <!-- Video -->
+            <template x-if="selected.video">
+              <div class="aspect-video w-full">
+                <iframe :src="selected.src" frameborder="0" allowfullscreen class="w-full h-full rounded shadow-lg"></iframe>
+              </div>
+            </template>
+    
+            <h2 class="text-white text-center mt-4 text-xl" x-text="selected.title"></h2>
+          </div>
+        </div>
+      </template>
+    
+      <footer class="text-center text-sm text-gray-500 mt-12 p-4">
+        &copy; 2025 Arquitectura Virtual
+      </footer>
+
+
+</body>
+</html>

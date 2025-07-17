@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura Virtual - Contacto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 flex flex-col min-h-screen">
+    <header class="bg-blue-900 text-white p-4 shadow">
+        <nav class="container mx-auto flex flex-wrap justify-between items-center">
+          <a href="index.html" class="font-bold text-xl">Arquitectura Virtual</a>
+          <ul class="flex flex-col space-y-2 md:flex-row md:space-x-6 md:space-y-0 text-base md:text-lg mt-4 md:mt-0">
+            <li><a href="index.html" class="hover:underline">Inicio</a></li>
+            <li><a href="servicios.html" class="hover:underline">Servicios</a></li>
+            <li><a href="portafolio.html" class="hover:underline">Portafolio</a></li>
+            <li><a href="contacto.html" class="hover:underline font-bold underline">Contacto</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+      <main class="container mx-auto px-4 py-6 md:p-8 flex-grow">
+    
+        <h1 class="text-2xl md:text-3xl font-bold mb-6">Contáctanos</h1>
+    
+        <form action="https://formspree.io/f/xjkrzvlg" method="POST" class="space-y-4 bg-white p-6 rounded shadow w-full max-w-xl mx-auto">
+    
+          <div>
+            <label class="block text-sm font-medium mb-1">Nombre completo</label>
+            <input type="text" name="nombre" required class="w-full border border-gray-300 rounded px-3 py-2" />
+          </div>
+    
+          <div>
+            <label class="block text-sm font-medium mb-1">Correo electrónico</label>
+            <input type="email" name="email" required class="w-full border border-gray-300 rounded px-3 py-2" />
+          </div>
+    
+          <div>
+            <label class="block text-sm font-medium mb-1">Tipo de proyecto</label>
+            <input type="text" name="proyecto" class="w-full border border-gray-300 rounded px-3 py-2" />
+          </div>
+    
+          <div>
+            <label class="block text-sm font-medium mb-1">Comentarios</label>
+            <textarea name="comentarios" rows="4" class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
+          </div>
+    
+          <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-700">Enviar</button>
+        </form>
+    
+      </main>
+    
+      <footer class="bg-gray-200 text-center p-4 mt-20 text-sm text-gray-700">
+        &copy; 2025 Arquitectura Virtual
+      </footer>
+    
+
+
+
+</body>
+</html>
